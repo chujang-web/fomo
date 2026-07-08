@@ -13,19 +13,19 @@
 tailwind.config={theme:{extend:{colors:{brand:{bg:'#07101f',card:'#111a2b',line:'#26324a',accent:'#00ff88',blue:'#60a5fa',coral:'#fb7185',gold:'#fbbf24',text:'#f8fafc',muted:'#94a3b8'}},fontFamily:{sans:['Noto Sans KR','sans-serif'],display:['Space Grotesk','sans-serif']}}}}
 </script>
 <style>
-body{font-family:'Noto Sans KR',sans-serif;background:radial-gradient(circle at top,#10213d 0,#07101f 42%,#050914 100%);color:#f8fafc}.glass{background:rgba(17,26,43,.78);border:1px solid rgba(255,255,255,.07);backdrop-filter:blur(14px)}input,select{background:#0b1220;border:1px solid rgba(255,255,255,.12);border-radius:.7rem;padding:.55rem .7rem;color:#f8fafc;width:100%;outline:none}input:focus,select:focus{border-color:#00ff88}.mini{font-size:11px;color:#94a3b8}.tag{font-size:11px;border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:.25rem .55rem}.btn{border-radius:.9rem;font-weight:900;transition:.15s}.btn:active{transform:scale(.98)}.table th{font-size:11px;color:#94a3b8;text-align:left;padding:.45rem}.table td{padding:.45rem}.timeline-dot{width:10px;height:10px;border-radius:999px;background:#00ff88;box-shadow:0 0 12px rgba(0,255,136,.65)}
+body{font-family:'Noto Sans KR',sans-serif;background:radial-gradient(circle at top,#10213d 0,#07101f 42%,#050914 100%);color:#f8fafc}.glass{background:rgba(17,26,43,.78);border:1px solid rgba(255,255,255,.07);backdrop-filter:blur(14px)}input,select{background:#0b1220;border:1px solid rgba(255,255,255,.12);border-radius:.7rem;padding:.55rem .7rem;color:#f8fafc;width:100%;outline:none}input:focus,select:focus{border-color:#00ff88}.mini{font-size:11px;color:#94a3b8}.tag{font-size:11px;border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:.25rem .55rem}.btn{border-radius:.9rem;font-weight:900;transition:.15s}.btn:active{transform:scale(.98)}.table th{font-size:11px;color:#94a3b8;text-align:left;padding:.45rem}.table td{padding:.45rem}.timeline-dot{width:10px;height:10px;border-radius:999px;background:#00ff88;box-shadow:0 0 12px rgba(0,255,136,.65)}.infoBtn{width:24px;height:24px;border-radius:999px;background:rgba(96,165,250,.12);border:1px solid rgba(96,165,250,.35);color:#93c5fd;font-weight:900}.metricPill{display:inline-block;margin-top:.25rem;margin-right:.25rem;border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:.14rem .45rem;font-size:10px;color:#cbd5e1}.modalBack{position:fixed;inset:0;background:rgba(0,0,0,.62);z-index:99999;display:none;align-items:center;justify-content:center;padding:18px}.modalCard{max-width:520px;width:100%;background:#0b1220;border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:20px;box-shadow:0 20px 80px rgba(0,0,0,.45)}
 </style>
 </head>
 <body class="min-h-screen">
 <header class="sticky top-0 z-40 glass px-5 md:px-10 py-4 flex justify-between items-center">
-  <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-brand-accent/10 border border-brand-accent/30 flex items-center justify-center text-2xl">🦜</div><div><h1 class="font-black leading-none">FOMO Advanced <span class="text-brand-accent">v14</span></h1><p class="text-[10px] text-brand-muted tracking-widest uppercase mt-1">Retirement Portfolio Simulator</p></div></div>
+  <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-brand-accent/10 border border-brand-accent/30 flex items-center justify-center text-2xl">🦜</div><div><h1 class="font-black leading-none">FOMO Advanced <span class="text-brand-accent">v1.1</span></h1><p class="text-[10px] text-brand-muted tracking-widest uppercase mt-1">Retirement Portfolio Simulator</p></div></div>
   <div class="hidden md:flex gap-2"><span class="tag text-brand-accent">고급형</span><span class="tag">자산별 타임라인</span><span class="tag">과거 평균 기반 3가지 시나리오</span></div>
 </header>
 <main class="max-w-7xl mx-auto p-4 md:p-8 space-y-6">
   <section class="text-center max-w-3xl mx-auto py-6">
     <span class="text-xs font-black text-brand-accent bg-brand-accent/10 border border-brand-accent/20 px-4 py-1.5 rounded-full">고급형 · 실제 은퇴 설계용</span>
     <h2 class="text-3xl md:text-5xl font-black mt-4 leading-tight">일시금·적립식·거치·연금까지<br><span class="text-brand-accent">한 번에 계산</span></h2>
-    <p class="text-brand-muted mt-3 text-sm">자산마다 일시금 시기, 적립 시작/종료, CAGR, 배당 방식을 따로 입력하고 은퇴 후 인출·연금·목표 생활비를 비교합니다.</p>
+    <p class="text-brand-muted mt-3 text-sm">자산마다 일시금 시기와 적립 시작/종료만 입력하면, 과거 평균 CAGR과 배당 정보는 자산 데이터에서 자동 적용됩니다.</p>
   </section>
 
   <div class="grid grid-cols-1 xl:grid-cols-12 gap-6">
@@ -52,8 +52,8 @@ body{font-family:'Noto Sans KR',sans-serif;background:radial-gradient(circle at 
           <div class="flex gap-2"><button class="btn bg-white/5 border border-white/10 px-3 py-2 text-sm" onclick="addAssetRow()">+ 자산 추가</button><button class="btn bg-brand-blue/20 text-brand-blue border border-brand-blue/30 px-3 py-2 text-sm" onclick="loadSample()">샘플 불러오기</button></div>
         </div>
         <div class="overflow-x-auto">
-          <table class="table w-full min-w-[1120px]" id="assetTable">
-            <thead><tr><th>자산</th><th>일시금<br><span class="mini">KRW=만원</span></th><th>일시금 시기</th><th>월 적립<br><span class="mini">KRW=만원</span></th><th>적립 시작</th><th>적립 종료</th><th>과거 평균<br><span class="mini">CAGR%</span></th><th>배당%</th><th>배당 방식</th><th></th></tr></thead>
+          <table class="table w-full min-w-[880px]" id="assetTable">
+            <thead><tr><th>자산</th><th>일시금<br><span class="mini">KRW=만원</span></th><th>일시금 시기</th><th>월 적립<br><span class="mini">KRW=만원</span></th><th>적립 시작</th><th>적립 종료</th><th>자동 지표</th><th></th></tr></thead>
             <tbody id="assetRows"></tbody>
           </table>
         </div>
@@ -101,20 +101,37 @@ body{font-family:'Noto Sans KR',sans-serif;background:radial-gradient(circle at 
     </section>
   </div>
 </main>
+<div id="assetInfoModal" class="modalBack" onclick="if(event.target.id==='assetInfoModal')closeAssetInfo()"><div class="modalCard"><div class="flex justify-between items-start gap-4"><div><h3 id="assetInfoTitle" class="text-xl font-black text-brand-accent">자산 정보</h3><p id="assetInfoSub" class="mini mt-1"></p></div><button class="btn bg-white/5 border border-white/10 px-3 py-2" onclick="closeAssetInfo()">닫기</button></div><div id="assetInfoBody" class="mt-4 text-sm leading-relaxed text-brand-text"></div></div></div>
 <script>
 let ASSETS = {};
+let RAW_ASSETS = {};
 async function loadAdvancedAssets(){
   const res = await fetch('data/assets.json');
   if(!res.ok) throw new Error('자산 데이터 JSON을 불러오지 못했습니다.');
-  const raw = await res.json();
-  ASSETS = Object.fromEntries(Object.entries(raw).map(([key, asset]) => {
+  RAW_ASSETS = await res.json();
+  ASSETS = Object.fromEntries(Object.entries(RAW_ASSETS).map(([key, asset]) => {
     const label = asset.name || asset.symbol || key.toUpperCase();
     const icon = asset.icon || '📈';
     const cagr = Math.round(((asset.cagr || 0.08) * 100) * 10) / 10;
+    const div = Math.round(((asset.dividendYield || asset.dividend || 0) * 100) * 10) / 10;
     const desc = asset.description || asset.tooltip || `${asset.symbol || key.toUpperCase()} · ${asset.unit || ''}`;
-    return [key, [label, icon, cagr, desc]];
+    const meta = [asset.tracks, asset.listing, asset.accumulation, asset.category].filter(Boolean).join(' · ');
+    return [key, [label, icon, cagr, desc, div, meta, asset]];
   }));
 }
+function assetCagr(tr){let key=tr.querySelector('.assetSel')?.value; return ((ASSETS[key]?.[2] ?? 8)/100);}
+function assetDividend(tr){let key=tr.querySelector('.assetSel')?.value; return ((ASSETS[key]?.[4] ?? 0)/100);}
+function assetMetricHtml(key){let a=ASSETS[key]; if(!a)return ''; return `<span class="metricPill">CAGR ${a[2]}%</span><span class="metricPill">배당 ${a[4]||0}%</span>`;}
+function showAssetInfo(key){let a=ASSETS[key]; if(!a)return; let raw=a[6]||{}; document.getElementById('assetInfoTitle').textContent=`${a[1]} ${a[0]}`; document.getElementById('assetInfoSub').textContent=raw.symbol||key.toUpperCase(); document.getElementById('assetInfoBody').innerHTML=`
+  <div class="grid grid-cols-2 gap-3">
+    <div class="bg-white/5 rounded-xl p-3"><p class="mini">과거 평균 CAGR</p><b class="text-brand-accent">${a[2]}%</b></div>
+    <div class="bg-white/5 rounded-xl p-3"><p class="mini">배당/분배율</p><b class="text-brand-blue">${a[4]||0}%</b></div>
+    <div class="bg-white/5 rounded-xl p-3"><p class="mini">추종 지수</p><b>${raw.tracks||'-'}</b></div>
+    <div class="bg-white/5 rounded-xl p-3"><p class="mini">상장/통화</p><b>${raw.listing||raw.unit||'-'}</b></div>
+  </div>
+  <p class="mt-4 text-brand-muted">${a[3]||''}</p>
+  <p class="mini mt-3">※ CAGR과 배당률은 사용자가 직접 입력하지 않으며, 서비스의 자산 데이터 기준값이 자동 적용됩니다. 향후 API 연동 후 자동 업데이트됩니다.</p>`; document.getElementById('assetInfoModal').style.display='flex';}
+function closeAssetInfo(){document.getElementById('assetInfoModal').style.display='none'}
 
 const FX={KRW:1,EUR:1730,USD:1350,RON:348}; const TODAY=new Date(); const CURRENT_YEAR=TODAY.getFullYear(); const CURRENT_MONTH=TODAY.getMonth()+1; let assetChart,holdChart,cashFlowChart;
 function ym(y,m){return y*12+(m-1)} function nowYM(){return ym(CURRENT_YEAR,CURRENT_MONTH)}
@@ -129,13 +146,14 @@ function ageToYM(age,month=null){return ym(birthYear()+age, month||birthMonth())
 function syncRetirementFromBirth(){let rAge=+document.getElementById('retireAge')?.value||60; let rYm=ageToYM(rAge,birthMonth()); retireYear.value=Math.floor(rYm/12); retireMonth.value=(rYm%12)+1; let info=document.getElementById('ageInfo'); if(info){info.innerHTML=`현재 만 <b class="text-brand-accent">${currentAge()}세</b> · 예상 은퇴 <b class="text-brand-accent">${retireYear.value}년 ${retireMonth.value}월</b> · 연금 시작은 각 연금의 수령 시작 나이 기준으로 자동 계산됩니다.`;}}
 function pensionStartYM(tr){let age=+tr.querySelector('.pAge').value||65;let month=+tr.querySelector('.pMonth').value||birthMonth();return ageToYM(age,month)}
 function updatePensionStartLabels(){document.querySelectorAll('.pensionRow').forEach(tr=>{let start=pensionStartYM(tr);let el=tr.querySelector('.pStartYear');if(el)el.textContent=`${Math.floor(start/12)}년 ${String(start%12+1).padStart(2,'0')}월`;});}
-function row(asset='sxr8',lump=1000,ly=2026,lm=1,monthly=50,sy=2026,sm=1,ey=2035,em=12,cagr=11,div=0,divMode='reinvest'){
-return `<tr class="assetRow border-t border-white/5"><td><select class="assetSel" onchange="syncCagr(this)" title="${ASSETS[asset]?.[3]||''}">${Object.entries(ASSETS).map(([k,a])=>`<option value="${k}" ${k===asset?'selected':''} title="${a[3]||''}">${a[1]} ${a[0]}</option>`).join('')}</select><p class="assetInfo mini mt-1 max-w-[220px]">${ASSETS[asset]?.[3]||''}</p></td><td><input class="lump" type="number" value="${lump}"></td><td><div class="grid grid-cols-2 gap-1"><input class="lumpY" type="number" value="${ly}"><input class="lumpM" type="number" min="1" max="12" value="${lm}"></div></td><td><input class="monthly" type="number" value="${monthly}"></td><td><div class="grid grid-cols-2 gap-1"><input class="startY" type="number" value="${sy}"><input class="startM" type="number" min="1" max="12" value="${sm}"></div></td><td><div class="grid grid-cols-2 gap-1"><input class="endY" type="number" value="${ey}"><input class="endM" type="number" min="1" max="12" value="${em}"></div></td><td><input class="cagr" type="number" step="0.1" value="${cagr}"></td><td><input class="div" type="number" step="0.1" value="${div}"></td><td><select class="divMode"><option value="reinvest" ${divMode==='reinvest'?'selected':''}>재투자</option><option value="cash" ${divMode==='cash'?'selected':''}>생활비</option><option value="hold" ${divMode==='hold'?'selected':''}>현금보유</option></select></td><td><button class="btn text-brand-coral" onclick="this.closest('tr').remove();calculate()">삭제</button></td></tr>`}
+function row(asset='sxr8',lump=1000,ly=2026,lm=1,monthly=50,sy=2026,sm=1,ey=2035,em=12){
+let info=ASSETS[asset]?.[3]||'';
+return `<tr class="assetRow border-t border-white/5"><td><div class="flex gap-2 items-center"><select class="assetSel" onchange="syncAssetInfo(this)" title="${info}">${Object.entries(ASSETS).map(([k,a])=>`<option value="${k}" ${k===asset?'selected':''} title="${a[3]||''}">${a[1]} ${a[0]}</option>`).join('')}</select><button type="button" class="infoBtn" onclick="showAssetInfo(this.closest('tr').querySelector('.assetSel').value)">ⓘ</button></div><p class="assetInfo mini mt-1 max-w-[260px]">${info}</p></td><td><input class="lump" type="number" value="${lump}"></td><td><div class="grid grid-cols-2 gap-1"><input class="lumpY" type="number" value="${ly}"><input class="lumpM" type="number" min="1" max="12" value="${lm}"></div></td><td><input class="monthly" type="number" value="${monthly}"></td><td><div class="grid grid-cols-2 gap-1"><input class="startY" type="number" value="${sy}"><input class="startM" type="number" min="1" max="12" value="${sm}"></div></td><td><div class="grid grid-cols-2 gap-1"><input class="endY" type="number" value="${ey}"><input class="endM" type="number" min="1" max="12" value="${em}"></div></td><td><div class="autoMetrics">${assetMetricHtml(asset)}<p class="mini mt-1">자동 적용</p></div></td><td><button class="btn text-brand-coral" onclick="this.closest('tr').remove();calculate()">삭제</button></td></tr>`}
 function pensionRow(name='국민연금',amount=150,startAge=65,m=null){m=m||birthMonth();let start=ageToYM(startAge,m);return `<tr class="pensionRow border-t border-white/5"><td><input class="pName" value="${name}"></td><td><input class="pAmount" type="number" value="${amount}"></td><td><input class="pAge" type="number" min="1" max="100" value="${startAge}"></td><td><input class="pMonth" type="number" min="1" max="12" value="${m}"></td><td><span class="pStartYear text-brand-accent font-bold">${Math.floor(start/12)}년 ${String(start%12+1).padStart(2,'0')}월</span></td><td><button class="btn text-brand-coral" onclick="this.closest('tr').remove();calculate()">삭제</button></td></tr>`}
 function addAssetRow(){document.getElementById('assetRows').insertAdjacentHTML('beforeend',row());bind();calculate()} function addPensionRow(){document.getElementById('pensionRows').insertAdjacentHTML('beforeend',pensionRow());bind();calculate()}
-function syncCagr(sel){let tr=sel.closest('tr');tr.querySelector('.cagr').value=ASSETS[sel.value][2];let info=ASSETS[sel.value][3]||'';sel.title=info;let box=tr.querySelector('.assetInfo');if(box)box.textContent=info;calculate()}
+function syncAssetInfo(sel){let tr=sel.closest('tr');let info=ASSETS[sel.value]?.[3]||'';sel.title=info;let box=tr.querySelector('.assetInfo');if(box)box.textContent=info;let metrics=tr.querySelector('.autoMetrics');if(metrics)metrics.innerHTML=assetMetricHtml(sel.value)+'<p class="mini mt-1">자동 적용</p>';calculate()}
 function bind(){document.querySelectorAll('input,select').forEach(el=>{el.oninput=calculate; el.onchange=calculate})}
-function loadSample(){document.getElementById('assetRows').innerHTML='';document.getElementById('assetRows').insertAdjacentHTML('beforeend',row('sxr8',1000,2026,1,50,2026,1,2035,12,11,1.3,'reinvest'));document.getElementById('assetRows').insertAdjacentHTML('beforeend',row('sxrv',0,2026,1,50,2026,1,2035,12,16,0,'reinvest'));document.getElementById('pensionRows').innerHTML=pensionRow('공적연금 예시',100,65,birthMonth());bind();calculate()}
+function loadSample(){document.getElementById('assetRows').innerHTML='';document.getElementById('assetRows').insertAdjacentHTML('beforeend',row('sxr8',1000,2026,1,50,2026,1,2035,12));document.getElementById('assetRows').insertAdjacentHTML('beforeend',row('sxrv',0,2026,1,50,2026,1,2035,12));document.getElementById('pensionRows').innerHTML=pensionRow('공적연금 예시',100,65,birthMonth());bind();calculate()}
 function taxFactor(){let t=document.getElementById('taxCountry').value;return t==='KR'?0.78:t==='RO'?0.90:t==='US'?0.85:1}
 function scenarioMultipliers(){return {cons:.7,avg:1,opt:1.3}}
 function simulate(mult=1){
@@ -147,11 +165,9 @@ function simulate(mult=1){
  let balances=rows.map(()=>0), principal=0;
  for(let t=start;t<=end;t++){
    rows.forEach((tr,i)=>{
-     let cagr=((+tr.querySelector('.cagr').value||0)/100)*mult;
+     let cagr=assetCagr(tr)*mult;
      let mr=Math.pow(Math.max(0.01,1+cagr),1/12)-1;
-     let div=(+tr.querySelector('.div').value||0)/100/12;
-     let divMode=tr.querySelector('.divMode').value;
-     balances[i]*=(1+mr+(divMode==='reinvest'?div:0));
+     balances[i]*=(1+mr);
      let ly=+tr.querySelector('.lumpY').value,lm=+tr.querySelector('.lumpM').value;
      if(t===ym(ly,lm)){
        let a=inputToBase(tr.querySelector('.lump').value);
@@ -190,11 +206,9 @@ function simulateUntil(endYM, mult=1){
  let balances=rows.map(()=>0), principal=0;
  for(let t=start;t<=endYM;t++){
    rows.forEach((tr,i)=>{
-     let cagr=((+tr.querySelector('.cagr').value||0)/100)*mult;
+     let cagr=assetCagr(tr)*mult;
      let mr=Math.pow(Math.max(0.01,1+cagr),1/12)-1;
-     let div=(+tr.querySelector('.div').value||0)/100/12;
-     let divMode=tr.querySelector('.divMode').value;
-     balances[i]*=(1+mr+(divMode==='reinvest'?div:0));
+     balances[i]*=(1+mr);
      let ly=+tr.querySelector('.lumpY').value,lm=+tr.querySelector('.lumpM').value;
      if(t===ym(ly,lm)){let a=inputToBase(tr.querySelector('.lump').value); balances[i]+=a; principal+=a;}
      let sy=+tr.querySelector('.startY').value,sm=+tr.querySelector('.startM').value,ey=+tr.querySelector('.endY').value,em=+tr.querySelector('.endM').value;
@@ -210,15 +224,12 @@ function weightedHistoricalCagrAt(endYM){
  let weighted=0;
  if(total>0){
    sim.rows.forEach((tr,i)=>{
-     let c=(+tr.querySelector('.cagr').value||0)/100;
-     let div=(+tr.querySelector('.div').value||0)/100;
-     let divMode=tr.querySelector('.divMode').value;
-     if(divMode==='reinvest') c+=div;
+     let c=assetCagr(tr);
      weighted+=c*(sim.balances[i]/total);
    });
  } else {
    let rows=[...document.querySelectorAll('.assetRow')];
-   weighted=rows.length?rows.reduce((s,tr)=>s+((+tr.querySelector('.cagr').value||0)/100),0)/rows.length:0.06;
+   weighted=rows.length?rows.reduce((s,tr)=>s+assetCagr(tr),0)/rows.length:0.06;
  }
  return weighted;
 }
