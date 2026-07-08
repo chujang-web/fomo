@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FutureWealth FOMO & RETIRE</title>
+<style>
+html,body{margin:0;height:100%;background:#050914;color:#f8fafc;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Noto Sans KR",sans-serif;}
+.modebar{position:sticky;top:0;z-index:9999;background:rgba(5,9,20,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08);padding:10px 14px;display:flex;gap:10px;align-items:center;justify-content:space-between;box-sizing:border-box;}
+.left{display:flex;gap:10px;align-items:center;min-width:0}.logo{width:36px;height:36px;border-radius:12px;background:rgba(0,255,136,.1);border:1px solid rgba(0,255,136,.28);display:flex;align-items:center;justify-content:center;font-size:21px}.title{font-weight:900;line-height:1.05;white-space:nowrap}.subtitle{font-size:10px;color:#94a3b8;letter-spacing:.12em;text-transform:uppercase;margin-top:2px}.buttons{display:flex;gap:8px;align-items:center}button{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#f8fafc;border-radius:999px;padding:9px 13px;font-weight:900;cursor:pointer}button.active{background:#00ff88;color:#050914;border-color:#00ff88;box-shadow:0 0 18px rgba(0,255,136,.25)}#modeDesc{font-size:12px;color:#94a3b8;margin-left:4px}iframe{width:100%;height:calc(100vh - 58px);border:0;display:block;background:#090d16}@media(max-width:700px){.title{font-size:13px}.subtitle,#modeDesc{display:none}button{padding:8px 10px;font-size:12px}.logo{width:32px;height:32px}}
+</style>
+</head>
+<body>
+<div class="modebar"><div class="left"><div class="logo">🦜</div><div><div class="title">FutureWealth</div><div class="subtitle">Beginner + Advanced</div></div><span id="modeDesc">초보용: 그때 투자했다면?</span></div><div class="buttons"><button id="btnBeginner" class="active" onclick="switchMode('beginner')">초보용</button><button id="btnAdvanced" onclick="switchMode('advanced')">고급형</button></div></div>
+<iframe id="appFrame" title="FOMO Simulator" src="./beginner.html"></iframe>
+<script>
+function switchMode(mode){
+  localStorage.setItem('fomoMode',mode);
+  document.getElementById('btnBeginner').classList.toggle('active',mode==='beginner');
+  document.getElementById('btnAdvanced').classList.toggle('active',mode==='advanced');
+  document.getElementById('modeDesc').textContent=mode==='beginner'?'초보용: 그때 투자했다면?':'고급형: 앞으로 투자한다면?';
+  document.getElementById('appFrame').src=mode==='beginner'?'./beginner.html':'./advanced.html';
+}
+switchMode(localStorage.getItem('fomoMode')==='advanced'?'advanced':'beginner');
+</script>
+</body>
+</html>
