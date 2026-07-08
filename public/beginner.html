@@ -520,7 +520,7 @@
                                     본 프로그램이 제공하는 모든 과거 데이터 및 미래 전망치 시뮬레이션은 과거의 역사적 성과를 토대로 제작된 모의 시나리오일 뿐이며, <strong>향후 실제 실질 투자 수익률을 절대 보장하지 않습니다.</strong> 
                                 </p>
                                 <p class="text-[10.5px] leading-relaxed text-brand-muted/90">
-                                    시장의 예기치 못한 하락, 환율 변동성, 세법 변경(예: 루마니아 배당세의 16% 인상과 같은 현지 제도 변화), 거래 수수료 및 인플레이션 편차 등 현실 변수로 인해 실제 자산 추이는 큰 오차가 발생할 수 있습니다. 
+                                    시장의 예기치 못한 하락, 환율 변동성, 세법 변경, 거래 수수료 및 인플레이션 편차 등 현실 변수로 인해 실제 자산 추이는 큰 오차가 발생할 수 있습니다. 
                                 </p>
                                 <p class="font-bold text-brand-text text-[10.5px] border-l-2 border-brand-coral pl-2 mt-2">
                                     모든 투자의 최종 결정과 수익/손실에 대한 법적 책임은 투자자 본인에게 귀속되므로 본인의 판단 하에 신중하고 보수적으로 설계 및 실행해 주시기 바랍니다.
@@ -735,7 +735,7 @@
                     defaultDcaAmount = 100;
                 } else if (selectedCurrency === "RON") {
                     defaultAmount = 500;
-                    defaultLumpAmount = 5000;
+                    defaultLumpAmount = 1000;
                     defaultDcaAmount = 500;
                 }
 
@@ -765,14 +765,14 @@
                                     <span class="block text-[10px] text-brand-muted font-bold mb-1">초기 일시금</span>
                                     <input type="number" id="${lumpId}" value="${lumpValue}" 
                                         class="w-full bg-brand-card border border-white/10 rounded-lg py-2 pl-4 pr-16 text-sm font-bold text-brand-text focus:outline-none focus:border-brand-accent transition-colors" 
-                                        placeholder="${selectedCurrency === 'KRW' ? '예) 5000 = 5,000만원' : '일시금'}">
+                                        placeholder="${selectedCurrency === 'KRW' ? '예) 1000 = 1,000만원' : '일시금'}">
                                     <span class="absolute right-4 bottom-2.5 text-xs font-bold text-brand-accent">${CURRENCY_SYMBOLS[selectedCurrency]}</span>
                                 </label>
                                 <label class="relative block">
                                     <span class="block text-[10px] text-brand-muted font-bold mb-1">매월 적립금</span>
                                     <input type="number" id="${dcaId}" value="${dcaValue}" 
                                         class="w-full bg-brand-card border border-white/10 rounded-lg py-2 pl-4 pr-16 text-sm font-bold text-brand-text focus:outline-none focus:border-brand-accent transition-colors" 
-                                        placeholder="${selectedCurrency === 'KRW' ? '예) 150 = 150만원' : '월 납입금'}">
+                                        placeholder="${selectedCurrency === 'KRW' ? '예) 50 = 50만원' : '월 납입금'}">
                                     <span class="absolute right-4 bottom-2.5 text-xs font-bold text-brand-accent">${CURRENCY_SYMBOLS[selectedCurrency]}</span>
                                 </label>
                             </div>
