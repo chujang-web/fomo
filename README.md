@@ -1,45 +1,60 @@
-# FutureWealth FOMO & RETIRE v1.2.0
+# FutureWealth FOMO & RETIRE v1.3.0
 
-서비스용 다국어 MVP 패키지입니다.
+서비스 배포용 통합 릴리스입니다.
 
-## 주요 기능
+## 포함 기능
 
-- 초보자용 FOMO: 과거 특정 시점에 투자했다면 현재 얼마인지 계산
-- 고급형 RETIRE: 앞으로 투자하면 은퇴 후 자산과 현금흐름이 어떻게 변하는지 계산
-- 한국어 / 루마니아어 / 영어 지원
-- 브라우저 언어 자동 감지
-- 우측 하단 언어 선택기
-- 선택 언어 localStorage 저장
-- 자산 데이터와 가격 데이터 JSON 분리 구조 유지
+- 초보용: “그때 투자했다면 지금 얼마?” 과거 투자 시뮬레이터
+- 고급형: “앞으로 투자하면 은퇴 후 어떤 미래?” 은퇴/현금흐름 시뮬레이터
+- 한국어 / 루마니아어 / 영어 다국어 지원
+- 우측 하단 언어 선택기 및 브라우저 언어 자동 감지
+- 모바일 입력 중 자동 스크롤 방지
+- 고급형 CAGR/배당률 사용자 입력 제거
+- 자산 데이터 기반 자동 CAGR/배당률 적용
+- ETF/자산 정보 카드
+- 생년월 기반 은퇴/연금 시작 시점 자동 계산
+- 4% / 5% / 6% / 7% 인출률 버튼
+- 은퇴 이후 월 현금흐름 그래프
+- Cloudflare Pages 배포 구조
+- 향후 가격 API 업데이트를 위한 scripts 구조
 
-## 배포
+## 배포 방법
 
-Cloudflare Pages 설정:
+1. ZIP 압축 해제
+2. 폴더 안의 내용 전체를 GitHub 저장소 루트에 업로드
+3. Cloudflare Pages 설정
+   - Framework preset: None
+   - Build command: 비움
+   - Build output directory: `public`
+   - Root directory: 비움
+4. 배포 완료 후 사이트 확인
 
-- Framework preset: None
-- Build command: 비움
-- Build output directory: public
+## 폴더 구조
 
-## 파일 구조
-
-```
+```text
 public/
   index.html
   beginner.html
   advanced.html
-  js/i18n.js
-  locales/ko.json
-  locales/ro.json
-  locales/en.json
-  data/assets.json
-  data/prices.json
+  data/
+    assets.json
+    prices.json
+  locales/
+    ko.json
+    ro.json
+    en.json
+  js/
+    i18n.js
+scripts/
+  update_prices.js
+  bootstrap_history.js
+  market_data_lib.js
+docs/
+  CLOUDFLARE_PAGES_GUIDE.md
+  GITHUB_UPLOAD_GUIDE.md
+  ROADMAP.md
 ```
 
 ## 주의
 
-현재 번역은 정적 UI 중심입니다. 일부 계산 결과 문구와 동적 알림은 다음 버전에서 더 세밀하게 분리할 수 있습니다.
-
-
-## v1.2.1
-- 모바일에서 입력값 변경 시 결과 영역으로 자동 스크롤되는 문제를 수정했습니다.
-- 결과 영역 이동은 초보자 모드에서 계산 버튼을 직접 눌렀을 때만 발생합니다.
+현재 가격 데이터와 과거 가격 데이터는 MVP용 샘플/기준 데이터입니다. 실제 서비스 정확도를 높이려면 API 기반 가격 업데이트를 활성화해야 합니다.

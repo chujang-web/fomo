@@ -8,7 +8,7 @@
   "FOMO 계산기 시작 →": "Pornește calculatorul FOMO →",
   "RETIRE 시뮬레이터 시작 →": "Pornește simulatorul RETIRE →",
   "생년월, 은퇴 나이, 연금, 인출률을 반영해 미래 은퇴 현금흐름을 계산합니다.": "Calculează fluxul de numerar la pensie, incluzând luna nașterii, vârsta de pensionare, pensia și rata de retragere.",
-  "v1.0.2 · iframe 리디렉션 문제를 피하기 위해 첫 화면은 선택형 랜딩 페이지로 구성했습니다.": "v1.2.0 · Versiune multilingvă pentru Coreeană, Română și Engleză.",
+  "v1.0.2 · iframe 리디렉션 문제를 피하기 위해 첫 화면은 선택형 랜딩 페이지로 구성했습니다.": "v1.3.0 · Suport pentru Coreeană / Română / English",
   "껄무새 FOMO 통합 시뮬레이터 - 초보자용": "Simulator FOMO integrat - începători",
   "껄무새 FOMO 통합 시뮬레이터 - 고급형": "Simulator FOMO integrat - avansat",
   "껄무새": "FOMO Parrot",
@@ -167,5 +167,6 @@
   "투자 타임라인": "Cronologia investițiilor",
   "자산 정보": "Informații activ",
   "닫기": "Închide",
-  "본 시뮬레이터는 교육용 도구이며 실제 투자수익, 세금, 환율, 수수료를 보장하지 않습니다. 입력값과 가정에 따라 결과가 크게 달라질 수 있습니다.": "Acest simulator este un instrument educațional și nu garantează randamente, taxe, cursuri valutare sau comisioane reale. Rezultatele pot varia semnificativ în funcție de datele introduse și ipoteze."
+  "본 시뮬레이터는 교육용 도구이며 실제 투자수익, 세금, 환율, 수수료를 보장하지 않습니다. 입력값과 가정에 따라 결과가 크게 달라질 수 있습니다.": "Acest simulator este un instrument educațional și nu garantează randamente, taxe, cursuri valutare sau comisioane reale. Rezultatele pot varia semnificativ în funcție de datele introduse și ipoteze.",
+  "v1.3.0 · 한국어 / Română / English 지원": "v1.3.0 · Suport pentru Coreeană / Română / English"
 }

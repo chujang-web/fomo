@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.3.0 - Stable integrated release
+- v1.2.0 다국어 기능과 v1.2.1 모바일 자동 스크롤 수정 통합
+- 한국어 / 루마니아어 / 영어 지원 유지
+- 고급형 자동 CAGR/배당률 적용 유지
+- 개인 투자 계획처럼 보이는 기본값 제거 유지
+- Cloudflare Pages 배포용 기준 릴리스로 정리
+- README 및 버전 표기 정리
+
+
 ## v1.2.1 - Mobile scroll UX fix
 - Fixed mobile UX issue where realtime recalculation automatically scrolled to the result section whenever inputs changed.
 - Beginner mode now scrolls to results only when the user explicitly presses the calculate button.

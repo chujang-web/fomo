@@ -8,7 +8,7 @@
   "FOMO 계산기 시작 →": "Start FOMO calculator →",
   "RETIRE 시뮬레이터 시작 →": "Start RETIRE simulator →",
   "생년월, 은퇴 나이, 연금, 인출률을 반영해 미래 은퇴 현금흐름을 계산합니다.": "Calculate retirement cash flow using birth month, retirement age, pensions, and withdrawal rate.",
-  "v1.0.2 · iframe 리디렉션 문제를 피하기 위해 첫 화면은 선택형 랜딩 페이지로 구성했습니다.": "v1.2.0 · Multilingual version for Korean, Romanian, and English.",
+  "v1.0.2 · iframe 리디렉션 문제를 피하기 위해 첫 화면은 선택형 랜딩 페이지로 구성했습니다.": "v1.3.0 · Korean / Romanian / English support",
   "껄무새 FOMO 통합 시뮬레이터 - 초보자용": "Integrated FOMO simulator - beginner",
   "껄무새 FOMO 통합 시뮬레이터 - 고급형": "Integrated FOMO simulator - advanced",
   "껄무새": "FOMO Parrot",
@@ -167,5 +167,6 @@
   "투자 타임라인": "Investment timeline",
   "자산 정보": "Asset information",
   "닫기": "Close",
-  "본 시뮬레이터는 교육용 도구이며 실제 투자수익, 세금, 환율, 수수료를 보장하지 않습니다. 입력값과 가정에 따라 결과가 크게 달라질 수 있습니다.": "This simulator is an educational tool and does not guarantee actual returns, taxes, exchange rates, or fees. Results may vary significantly depending on inputs and assumptions."
+  "본 시뮬레이터는 교육용 도구이며 실제 투자수익, 세금, 환율, 수수료를 보장하지 않습니다. 입력값과 가정에 따라 결과가 크게 달라질 수 있습니다.": "This simulator is an educational tool and does not guarantee actual returns, taxes, exchange rates, or fees. Results may vary significantly depending on inputs and assumptions.",
+  "v1.3.0 · 한국어 / Română / English 지원": "v1.3.0 · Korean / Romanian / English support"
 }
