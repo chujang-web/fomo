@@ -1,10 +1,22 @@
-# CHANGELOG
+# Changelog
 
-## v1.1.0 - Auto Metrics for Advanced Mode
-- 고급형 자산별 투자 타임라인에서 사용자가 CAGR/배당률을 직접 입력하는 칸을 제거했습니다.
-- 선택한 자산의 과거 평균 CAGR과 배당률은 `public/data/assets.json` 기준값으로 자동 적용됩니다.
-- 자산별 ⓘ 정보 버튼을 추가하여 추종 지수, 상장 지역, 자동 적용 CAGR/배당률을 확인할 수 있게 했습니다.
-- 기존 v1.0.3의 개인 기본값 제거 및 index 오류 수정 사항을 유지했습니다.
+## v1.2.1 - Mobile scroll UX fix
+- Fixed mobile UX issue where realtime recalculation automatically scrolled to the result section whenever inputs changed.
+- Beginner mode now scrolls to results only when the user explicitly presses the calculate button.
 
-## v1.0.3 - Generic Defaults
-- 공개 서비스용 일반 기본값 적용.
+
+## v1.2.0
+
+- 한국어 / 루마니아어 / 영어 3개 언어 지원 추가
+- `public/locales/ko.json`, `ro.json`, `en.json` 추가
+- `public/js/i18n.js` 추가
+- 브라우저 언어 자동 감지
+- 우측 하단 언어 선택기 추가
+- 선택 언어 localStorage 저장
+- 랜딩/초보자/고급형 주요 UI 문구 번역
+
+## v1.1.0
+
+- 고급형 CAGR/배당률 사용자 입력 제거
+- 자산 데이터 기반 자동 지표 적용
+- 자산 정보 버튼 추가

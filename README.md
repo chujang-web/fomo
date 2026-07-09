@@ -1,85 +1,45 @@
-# FutureWealth FOMO & RETIRE v1.0.0
+# FutureWealth FOMO & RETIRE v1.2.0
 
-초보자용 **FOMO** 계산기와 고급형 **RETIRE** 은퇴 현금흐름 시뮬레이터를 하나로 묶은 1차 서비스 버전입니다.
+서비스용 다국어 MVP 패키지입니다.
 
-## 서비스 컨셉
+## 주요 기능
 
-- **FOMO / 초보용**: “그때 투자했다면 지금 얼마였을까?”
-- **RETIRE / 고급형**: “앞으로 투자하면 은퇴 후 어떤 미래가 펼쳐질까?”
+- 초보자용 FOMO: 과거 특정 시점에 투자했다면 현재 얼마인지 계산
+- 고급형 RETIRE: 앞으로 투자하면 은퇴 후 자산과 현금흐름이 어떻게 변하는지 계산
+- 한국어 / 루마니아어 / 영어 지원
+- 브라우저 언어 자동 감지
+- 우측 하단 언어 선택기
+- 선택 언어 localStorage 저장
+- 자산 데이터와 가격 데이터 JSON 분리 구조 유지
 
-## GitHub에 올릴 때
+## 배포
 
-이 폴더 안의 파일과 폴더를 GitHub 저장소 최상단에 그대로 업로드하세요.
+Cloudflare Pages 설정:
 
-```text
-.github/
-docs/
+- Framework preset: None
+- Build command: 비움
+- Build output directory: public
+
+## 파일 구조
+
+```
 public/
-scripts/
-package.json
-README.md
+  index.html
+  beginner.html
+  advanced.html
+  js/i18n.js
+  locales/ko.json
+  locales/ro.json
+  locales/en.json
+  data/assets.json
+  data/prices.json
 ```
 
-## Cloudflare Pages 배포 설정
+## 주의
 
-- Framework preset: **None**
-- Build command: 비워두기
-- Output directory: **public**
-- Root directory: 비워두기
-
-배포 후 기본 주소는 보통 아래처럼 생성됩니다.
-
-```text
-https://프로젝트명.pages.dev
-```
-
-## 로컬 실행
-
-브라우저에서 HTML을 직접 열면 JSON 로딩이 막힐 수 있으므로 간단 서버로 실행하세요.
-
-```bash
-npm run serve
-```
-
-그 다음 브라우저에서 아래 주소 접속:
-
-```text
-http://localhost:8000
-```
-
-## 가격 데이터 구조
-
-가격과 자산 정보는 앱과 분리되어 있습니다.
-
-```text
-public/data/assets.json
-public/data/prices.json
-public/data/update-log.json
-```
-
-나중에 가격 API를 연결하면 `public/data/prices.json`만 매일 갱신하면 됩니다.
-
-## 자동 가격 업데이트
-
-```bash
-npm run update:prices
-```
-
-테스트만 하고 파일을 바꾸지 않으려면:
-
-```bash
-npm run update:prices:dry
-```
-
-GitHub Actions는 `.github/workflows/update-prices.yml`에 포함되어 있습니다.
-
-## 주의사항
-
-- 현재 가격 데이터는 무료 데이터 제공자 연결을 위한 서비스 준비 구조입니다.
-- 실제 공개 운영 시 데이터 제공자의 이용약관과 상업적 사용 가능 여부를 확인해야 합니다.
-- 본 서비스는 투자 참고용 시뮬레이터이며 투자 수익을 보장하지 않습니다.
+현재 번역은 정적 UI 중심입니다. 일부 계산 결과 문구와 동적 알림은 다음 버전에서 더 세밀하게 분리할 수 있습니다.
 
 
-## v1.1.0 업데이트
-
-고급형 화면에서 CAGR/배당률 입력란을 제거했습니다. 이제 사용자는 투자 금액과 시기만 입력하고, 수익률 및 배당률은 자산 데이터(`public/data/assets.json`)의 기준값이 자동 적용됩니다.
+## v1.2.1
+- 모바일에서 입력값 변경 시 결과 영역으로 자동 스크롤되는 문제를 수정했습니다.
+- 결과 영역 이동은 초보자 모드에서 계산 버튼을 직접 눌렀을 때만 발생합니다.

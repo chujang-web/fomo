@@ -620,6 +620,7 @@
         let growthChartInstance = null;
         let withdrawalChartInstance = null;
         let hasCalculated = false; // Flag to trigger instant updates on tab clicks
+        let shouldScrollToResult = false; // Mobile UX: scroll only on explicit calculate button
 
         // Render UI Elements dynamically on page load
         document.addEventListener("DOMContentLoaded", async () => {
@@ -637,7 +638,9 @@
             // Add Event Listeners
             document.getElementById("btnCalculate").addEventListener("click", () => {
                 hasCalculated = true;
+                shouldScrollToResult = true;
                 calculateFOMO();
+                shouldScrollToResult = false;
             });
             document.getElementById("selectYear").addEventListener("change", (e) => {
                 selectedYear = parseInt(e.target.value);
@@ -1334,9 +1337,10 @@
             // Draw Chart 2: Monthly Withdrawal Trend
             generateWithdrawalChart(monthlyWithdrawalTrace);
 
-            // Smooth scroll on smaller devices
-            if (window.innerWidth < 1024) {
-                document.getElementById("resultContainer").scrollIntoView({ behavior: 'smooth' });
+            // Mobile UX: only scroll after the user explicitly presses the calculate button.
+            // Realtime recalculation must not move the page while the user is editing inputs.
+            if (shouldScrollToResult && window.innerWidth < 1024) {
+                document.getElementById("resultContainer").scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         }
 
@@ -1779,5 +1783,6 @@
         }
     </script>
 
+<script src="./js/i18n.js"></script>
 </body>
 </html>
